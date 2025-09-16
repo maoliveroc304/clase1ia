@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mentoría — Reforzamiento</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Mentoría rápida</h1>
+    <small>Profesor → Alumno · Sesiones de reforzamiento</small>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <div class="card flex">
+        <div>
+          <h2 id="studentName">Alumno: Miguel Olivero</h2>
+          <p class="muted">Curso objetivo: Inteligencia Artificial Generativa</p>
+        </div>
+        <div class="meta">
+          <div class="progress" title="Progreso">
+            <div id="pbFill"></div>
+            <span id="pbLabel">40%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Notas rápidas</h3>
+          <textarea id="notes" placeholder="Apunta observaciones, ejercicios y tareas cortas..."></textarea>
+          <div class="row">
+            <button id="saveNotes">Guardar notas</button>
+            <button id="clearNotes" class="ghost">Limpiar</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Sesiones y micro-tareas</h3>
+          <form id="sessionForm">
+            <input id="sessionTitle" placeholder="Título (ej: Álgebra - Ecuaciones)" required />
+            <input id="sessionDate" type="date" />
+            <div class="row">
+              <button type="submit">Añadir sesión</button>
+              <button id="resetSessions" type="button" class="ghost">Reset</button>
+            </div>
+          </form>
+
+          <ul id="sessionsList" class="sessions"></ul>
+        </div>
+      </div>
+
+      <div class="card small">
+        <label>Actualizar progreso: <input id="progressInput" type="number" min="0" max="100" value="40">%</label>
+        <button id="updateProgress" class="mini">Actualizar</button>
+        <span class="muted">Progreso se guarda localmente (localStorage).</span>
+      </div>
+
+    </section>
+
+    <aside class="panel side">
+      <div class="card">
+        <h4>Resumen rápido</h4>
+        <p id="summary">Sin sesiones. Guarda notas y añade una sesión.</p>
+      </div>
+
+      <div class="card">
+        <h4>Tips para el profesor</h4>
+        <ol>
+          <li>Fragmenta tareas: 15–20 minutos.</li>
+          <li>Refuerza con ejemplos resueltos.</li>
+          <li>Pregunta para confirmar comprensión.</li>
+        </ol>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="foot muted">Plantilla ligera • Hecha para trabajar rápido</footer>
+  <script src="script.js"></script>
+</body>
+</html>
